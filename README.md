@@ -234,9 +234,35 @@ Open **http://localhost:5173**
 
 ---
 
-## Deployment
+## Deploy to Vercel (Frontend)
 
-### Backend — AWS App Runner
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frvadde5%2FAI-StudyMate&project-name=ai-studymate&root-directory=client)
+
+### Manual Vercel Setup
+
+| Setting | Value |
+|---------|-------|
+| **Root Directory** | `client` |
+| **Framework Preset** | Vite |
+| **Build Command** | `npm run build` |
+| **Output Directory** | `dist` |
+| **Install Command** | `npm install` |
+
+### Environment Variables (Vercel Dashboard)
+
+| Variable | Value |
+|----------|-------|
+| `VITE_API_URL` | Your backend API URL (e.g. AWS App Runner URL + `/api`) |
+
+### CLI Deploy
+
+```bash
+cd client
+npx vercel login
+npx vercel --prod
+```
+
+---
 
 1. Push `server/` to your repository
 2. Create App Runner service using `apprunner.yaml`
